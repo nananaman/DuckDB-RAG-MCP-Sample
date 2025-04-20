@@ -1,0 +1,17 @@
+[tools]
+uv = "latest"
+
+[tasks.fmt]
+run = "uv run ruff format"
+
+[tasks.lint]
+run = "uv run ruff check && uv run mypy ."
+
+[tasks.test]
+run = "uv run pytest"
+
+[tasks.dev]
+run = "uv run mcp dev server.py"
+
+[tasks.build]
+run = "uv run pyinstaller --clean --strip --noconfirm --onefile server.py"
